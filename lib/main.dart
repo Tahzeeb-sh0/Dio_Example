@@ -1,3 +1,5 @@
+import 'package:dio_example/View/posts_view.dart';
+import 'package:dio_example/ViewModel/posts_viewModel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'View/comment_view.dart';
@@ -14,13 +16,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<CommentViewModel>(
-          create: (_) => CommentViewModel(),
-        ),
+        ChangeNotifierProvider<CommentViewModel>(create: (_) => CommentViewModel(),),
+        ChangeNotifierProvider<PostsViewModel>(create: (_)=> PostsViewModel())
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: CommentView(),
+        home: ViewModel(),
       ),
     );
   }

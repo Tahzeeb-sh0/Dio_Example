@@ -1,6 +1,8 @@
+import 'package:dio_example/Model/PostsModel.dart';
+import 'package:dio_example/ViewModel/posts_viewModel.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
+import 'package:shimmer/shimmer.dart';
 import '../ViewModel/comment_viewmodel.dart';
 
 class CommentView extends StatefulWidget {
@@ -30,10 +32,7 @@ class _CommentViewState extends State<CommentView> {
         builder: (context, vm, child) {
 
           if (vm.isLoading) {
-            return const Center(child:SpinKitWaveSpinner(
-              color: Colors.blue,
-              size: 50.0,
-            ));
+            return const Center(child: Shimmer(gradient:LinearGradient(colors: [Colors.red,Colors.blue]) , child:SizedBox(height: 200,width: 200,)));
           }
 
           if (vm.error.isNotEmpty) {
@@ -56,3 +55,4 @@ class _CommentViewState extends State<CommentView> {
     );
   }
 }
+

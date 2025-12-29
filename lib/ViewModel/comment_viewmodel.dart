@@ -1,6 +1,8 @@
 
 import 'package:dio_example/Model/CommentModel.dart';
+import 'package:dio_example/Model/PostsModel.dart';
 import 'package:dio_example/Repo/comment_repository.dart';
+import 'package:dio_example/Repo/posts_repository.dart';
 import 'package:flutter/cupertino.dart';
 
 class CommentViewModel extends ChangeNotifier {
